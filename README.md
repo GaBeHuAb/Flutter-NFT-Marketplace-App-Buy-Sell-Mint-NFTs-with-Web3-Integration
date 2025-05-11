@@ -26,6 +26,7 @@ A decentralized NFT marketplace built with Flutter and Solidity smart contracts,
   </tr>
 </table>
 
+
 ## Technical Architecture
 
 ### Frontend

